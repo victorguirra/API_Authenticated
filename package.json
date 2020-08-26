@@ -6,7 +6,7 @@
   "author": "Victor Guirra <victor.hugo.guirra@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "start": "nodemon src/server.js"
   },
   "dependencies": {
     "express": "^4.17.1"
