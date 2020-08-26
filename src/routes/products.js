@@ -13,7 +13,7 @@ router.get('/:id', (req, res) => {
     res.status(200).json({ Message: `Return Product With Id: ${ req.params.id }` })
 })
 
-router.patch('/', (req, res) => {
+router.put('/', (req, res) => {
     res.status(200).json({ Message: "Using PATCH Method!" })
 })
 
