@@ -1,6 +1,8 @@
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
 
+app.use(morgan('dev'));
 app.use('/products', require('./routes/products'));
 app.use('/requests', require('./routes/requests'));
 
