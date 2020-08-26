@@ -5,11 +5,13 @@
   "repository": "https://github.com/victorguirra/API_NodeJS.git",
   "author": "Victor Guirra <victor.hugo.guirra@gmail.com>",
   "license": "MIT",
-  "scripts":{
+  "scripts": {
     "dev": "nodemon src/server.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.4"
   }
 }
