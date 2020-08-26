@@ -6,7 +6,16 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    res.status(200).json({ Message: "Add New Product!" })
+    const product = {
+        name: req.body.name,
+        price: req.body.price,
+    }
+
+    res.status(201).json({ 
+        Message: "Add New Product!",
+        createdProduct: product 
+    })
+    
 })
 
 router.get('/:id', (req, res) => {

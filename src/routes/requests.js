@@ -6,7 +6,15 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    res.status(200).json({ Message: "Successfully Added New Request!" })
+    const request = {
+        id: req.body.id,
+        amount: req.body.amount,
+    }
+
+    res.status(200).json({ 
+        Message: "Successfully Added New Request!",
+        createdRequest: request, 
+    })
 })
 
 router.get('/:id', (req, res) => {
