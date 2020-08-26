@@ -8,6 +8,24 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header(
+        'Acess-Control-Allow-Header', 
+        'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+    );
+
+    if(req.method === "OPTIONS"){
+        res.header(
+            'Access-Control-Allow-Methods', 
+            'GET, POST, PUT, PATCH, DELETE'
+        )
+        return res.status(200).send({})
+    }
+
+    next();
+})
+
 app.use('/products', require('./routes/products'));
 app.use('/requests', require('./routes/requests'));
 
