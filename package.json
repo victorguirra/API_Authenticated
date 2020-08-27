@@ -6,8 +6,6 @@
   "author": "Victor Guirra <victor.hugo.guirra@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "debug": "^4.1.1",
-    "express": "^4.17.1",
-    "http": "^0.0.1-security"
+    "express": "^4.17.1"
   }
 }
