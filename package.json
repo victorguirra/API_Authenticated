@@ -1,0 +1,8 @@
+{
+  "name": "API_NodeJS",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/victorguirra/API_NodeJS.git",
+  "author": "Victor Guirra <victor.hugo.guirra@gmail.com>",
+  "license": "MIT"
+}
