@@ -25,5 +25,11 @@ module.exports = {
         const user = await Users.findByIdAndUpdate(req.params.id, req.body, { new: true })
 
         return res.status(200).send(user);
+    },
+
+    async deleteUser(req, res){
+        await Users.findByIdAndRemove(req.params.id);
+
+        return res.status(200).send(`User With Id ${ req.params.id } Successfully Deleted!`);
     }
 }
