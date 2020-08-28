@@ -3,6 +3,12 @@ require('../models/users');
 const Users = mongoose.model('Users');
 
 module.exports = {
+    async allUsers(req, res){
+        const users = await Users.find();
+
+        return res.status(200).send(users);
+    },
+
     async newUser(req, res){
         const { email } = req.body;
 
@@ -14,4 +20,10 @@ module.exports = {
             return res.status(200).send(AddUser);
         }
     },
+
+    async updateUser(req, res){
+        const user = await Users.findByIdAndUpdate(req.params.id, req.body, { new: true })
+
+        return res.status(200).send(user);
+    }
 }
