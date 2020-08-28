@@ -12,6 +12,9 @@ require('./database/connection');
 app.use('/products', require('./routes/products'));
 require('./models/products');
 
+app.use('/users', require('./routes/users'));
+require('./models/users');
+
 app.listen(3333, () => {
     console.log(' ✔ Server Running At URL: http://localhost:3333 ')
 })
