@@ -12,7 +12,8 @@ export default function Input( props ){
                 type={ props.type } 
                 id={ props.id } 
                 placeholder={ props.placeholder }
-                required 
+                required
+                onChange={ props.onChange } 
             />
 
         </Container>
