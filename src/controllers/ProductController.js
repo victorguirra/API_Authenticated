@@ -1,15 +1,16 @@
 const mongoose = require('mongoose');
 require('../models/products');
 const Products = mongoose.model('Products');
-const authMiddleware = require('../middlewares/auth');
-
 
 module.exports = {
 
     async allProducts(req, res){
         const allproducts = await Products.find();
 
-        return res.json(allproducts);
+        return res.send({
+            allproducts,
+            user: req.userId
+        });
     },
 
     async singleProduct(req, res){
@@ -19,9 +20,14 @@ module.exports = {
     },
 
     async newProduct(req, res){
-        const create = await Products.create( req.body );
+        const createdProduct = await Products.create( req.body );
 
-        return res.json(create);
+        const user = await req.userId;
+
+        return res.send({
+            createdProduct,
+            user
+        });
     },
 
     async updateProduct(req, res){

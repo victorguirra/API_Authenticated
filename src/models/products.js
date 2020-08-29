@@ -13,14 +13,6 @@ const ProductSchema = new mongoose.Schema({
         type:Number,
         required:true,
     },
-    numberContact:{
-        type:String,
-        required:true,
-    },
-    email:{
-        type:String,
-        required:true,
-    },
     urlImage:{
         type:String,
         required:true,
