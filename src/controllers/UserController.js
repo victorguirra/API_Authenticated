@@ -9,6 +9,12 @@ module.exports = {
         return res.status(200).send(users);
     },
 
+    async singleUser(req, res){
+        const user = await Users.findById(req.params.id);
+
+        return res.json(user);
+    },
+
     async newUser(req, res){
         const { email } = req.body;
 
