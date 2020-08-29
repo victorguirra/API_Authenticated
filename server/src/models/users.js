@@ -12,10 +12,6 @@ const UserSchema = new mongoose.Schema({
         unique:true,
         lowercase:true,
     },
-    nickname:{
-        type:String,
-        required:true,
-    },
     whatsapp:{
         type:String,
         required:true,
