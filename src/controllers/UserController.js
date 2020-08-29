@@ -1,6 +1,16 @@
 const mongoose = require('mongoose');
 require('../models/users');
 const Users = mongoose.model('Users');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
+const authConfig = require('../config/auth.json');
+
+function generatedToken(params = {}){
+    return jwt.sign(params, authConfig.secret, {
+        expiresIn: 86400,
+    })
+}
 
 module.exports = {
     async allUsers(req, res){
@@ -23,7 +33,12 @@ module.exports = {
         }else{
             const AddUser = await Users.create(req.body);
 
-            return res.status(200).send(AddUser);
+            AddUser.password = undefined;
+
+            return res.status(200).send({
+                AddUser,
+                token: generatedToken({ id: AddUser.id })   
+            });
         }
     },
 
@@ -37,5 +52,27 @@ module.exports = {
         await Users.findByIdAndRemove(req.params.id);
 
         return res.status(200).send(`User With Id ${ req.params.id } Successfully Deleted!`);
+    },
+
+    async authenticateUser(req, res){
+        const { email, password } = req.body;
+
+        const user = await Users.findOne({ email }).select('+password');
+
+        if(!user){
+            return res.status(400).send({ error: 'User Not Found' });
+        }
+
+        if(!await bcrypt.compare(password, user.password)){
+            return res.status(400).send({ error: 'Invalid Password' });
+        }
+
+        user.password = undefined;
+
+        res.send({ 
+            user,
+            token: generatedToken({ id: user.id }) 
+        });
+
     }
 }

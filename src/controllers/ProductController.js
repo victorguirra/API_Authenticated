@@ -1,8 +1,11 @@
- const mongoose = require('mongoose');
- require('../models/products');
- const Products = mongoose.model('Products');
+const mongoose = require('mongoose');
+require('../models/products');
+const Products = mongoose.model('Products');
+const authMiddleware = require('../middlewares/auth');
 
- module.exports = {
+
+module.exports = {
+
     async allProducts(req, res){
         const allproducts = await Products.find();
 
@@ -35,5 +38,7 @@
         await Products.findByIdAndRemove(req.params.id);
 
         res.send(` Product With Id: ${ req.params.id } Successfully Removed `);
-    }
+    },
+
+    
  }
