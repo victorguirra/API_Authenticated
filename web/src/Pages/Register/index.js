@@ -42,7 +42,7 @@ export default function Login(){
                 
             replace(`/home/${ newUserData._id }`)
                         
-        }).catch((error) => {
+        }).catch(() => {
             alert(` O Email Inserido já está em uso! Favor tentar com outro! `)
 
             document.location.reload(true);
