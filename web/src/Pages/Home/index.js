@@ -22,7 +22,7 @@ export default function Home(){
 
         FetchData();
 
-    }, [])
+    }, [id])
 
     return(
         <Container>
