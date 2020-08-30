@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 
 import api from '../../Services/api';
 
+import Header from '../../Components/Header';
+
 import { Container } from './styles';
 
 export default function Home(){
@@ -26,6 +28,8 @@ export default function Home(){
 
     return(
         <Container>
+            
+            <Header />
 
             <h1>Seja Muito Bem-Vindo(a) {userData.name}</h1>
 
