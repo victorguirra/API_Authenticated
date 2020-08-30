@@ -1,12 +1,32 @@
 import React from 'react';
 
-import { Container } from './styles';
+import Avatar from '../../Assets/Avatar.png';
 
-export default function Header(){
+import { Container, 
+        UserContainer, 
+        ImageContainer, 
+        AvatarImage,
+        UserName,
+        Logo,
+} from './styles';
+
+export default function Header( props ){
     return(
         <Container>
 
-            <h1>Here Go Header</h1>
+            <UserContainer>
+
+                <ImageContainer>
+
+                    <AvatarImage src={ Avatar } alt="Foto de Perfil" />
+
+                </ImageContainer>
+
+                <UserName>{ props.username }</UserName>
+
+            </UserContainer>
+
+            <Logo>Bazaar</Logo>
 
         </Container>
     )

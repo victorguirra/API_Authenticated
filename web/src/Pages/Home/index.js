@@ -29,7 +29,7 @@ export default function Home(){
     return(
         <Container>
             
-            <Header />
+            <Header username={ userData.name } />
 
             <h1>Seja Muito Bem-Vindo(a) {userData.name}</h1>
 
