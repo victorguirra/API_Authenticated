@@ -8,6 +8,10 @@ export const Container = styled.div`
     display:flex;
     align-items:center;
     justify-content:space-between;
+
+    .linkNewProduct{
+        text-decoration:none;
+    }
 `;
 
 export const UserContainer = styled.div`
@@ -38,6 +42,14 @@ export const UserName = styled.p`
     font-size:20px;
 `;
 
-export const Logo = styled.h2`
+export const ButtonAddNewProduct = styled.div`
+    background-color:var(--green);
+    width:60px;
+    height:60px;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     color:var(--white);
+    font-size:20px;
 `;

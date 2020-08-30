@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Avatar from '../../Assets/Avatar.png';
 
@@ -7,7 +8,7 @@ import { Container,
         ImageContainer, 
         AvatarImage,
         UserName,
-        Logo,
+        ButtonAddNewProduct,
 } from './styles';
 
 export default function Header( props ){
@@ -26,7 +27,15 @@ export default function Header( props ){
 
             </UserContainer>
 
-            <Logo>Bazaar</Logo>
+            <Link to="/" className="linkNewProduct">
+
+                <ButtonAddNewProduct>
+
+                    <h1>+</h1>
+
+                </ButtonAddNewProduct>
+
+            </Link>
 
         </Container>
     )
