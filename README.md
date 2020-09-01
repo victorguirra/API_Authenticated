@@ -59,3 +59,5 @@ Para ter acesso ao projeto, execute os seguintes comandos em seu terminal:
 ⚠ Para testar a API, você deverá utilizar um software, como o Insomnia, ou o Postman! OBS: A API está configurada para rodar na porta 3333;
 
 ---
+
+<h3 align="center">💻 Desenvolvido Por: Victor Guirra</h3>
